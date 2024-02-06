@@ -12,9 +12,11 @@ const MenuWrapper = ({ children }) => {
       if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
         // Check if the click occurred inside the menu component
         const isClickInsideMenu = event.target.closest(".menu-component");
+        const isClickedInsideCategoryModal =
+          event.target.closest(".category-modal");
 
         // If the click is not inside the menu, close all menus
-        if (!isClickInsideMenu) {
+        if (!isClickInsideMenu && !isClickedInsideCategoryModal) {
           dispatch(generalActions.closeAllMenus());
         }
       }

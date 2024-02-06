@@ -15,7 +15,9 @@ function Layout({ children }) {
   const popup = useSelector((state) => state.general.popup);
   const token = useSelector((state) => state.auth.token);
   const modalState = useSelector((state) => state.general.modalState);
-
+  const categoryModalState = useSelector(
+    (state) => state.general.categoryModalState
+  );
   const location = useLocation();
   const [scrollState, setScrollState] = useState({ value: 0, state: true });
 
@@ -39,7 +41,7 @@ function Layout({ children }) {
       }}
     >
       {modalState && <AddExpense />}
-      {/* <AddCategory /> */}
+      {categoryModalState && <AddCategory />}
       <Loading />
       {popup.state && <Popup />}
       <HeadNavbar />

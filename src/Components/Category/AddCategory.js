@@ -40,7 +40,7 @@ function AddExpense() {
           dispatch(generalActions.changeCategoryModelState());
         }}
       >
-        <div className=" bg-white drop-shadow-lg rounded p-4 w-80 sm:w-96">
+        <div className=" bg-white drop-shadow-lg rounded p-4 w-80 sm:w-96 category-modal">
           <div className=" relative">
             <button
               className=" absolute right-0 flex text-slate-400"
@@ -50,7 +50,7 @@ function AddExpense() {
             >
               <span className="text-3xl material-symbols-outlined">close</span>
             </button>
-            <HeaderTitle title={"Add new category"} icon={"label"} />
+            <HeaderTitle title={"Add Category"} icon={"label"} />
           </div>
 
           <div className=" grid grid-cols-2 gap-2">
@@ -72,7 +72,7 @@ function AddExpense() {
                 Name
               </InputField>
 
-              <ButtonPrimary type="submit" className="w-full">
+              <ButtonPrimary type="submit" className="mt-5 w-full">
                 Save Category
               </ButtonPrimary>
             </form>

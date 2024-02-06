@@ -13,7 +13,11 @@ function PulseButton({ classStyle = "" }) {
           ? "bg-lime-50 text-lime-500"
           : "bg-lime-500 text-lime-50"
       }  rounded-full w-16 h-16 drop-shadow-lg  ${classStyle} `}
-      onClick={() => dispatch(generalActions.changeModelState())}
+      onClick={() =>
+        location.pathname === "/categories"
+          ? dispatch(generalActions.changeCategoryModelState())
+          : dispatch(generalActions.changeModelState())
+      }
     >
       <span className=" absolute -translate-x-1/2 -translate-y-1/2 material-symbols-outlined text-5xl ">
         add
