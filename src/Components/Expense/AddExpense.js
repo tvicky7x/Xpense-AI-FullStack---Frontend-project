@@ -139,7 +139,7 @@ function AddExpense() {
               Income
             </ToggleButton>
           </div>
-          <div className=" my-3 text-slate-800">
+          <div className=" mt-5 text-slate-800">
             <form action="" onSubmit={addingExpense}>
               <div className="mb-1 mt-2">
                 <DropDown

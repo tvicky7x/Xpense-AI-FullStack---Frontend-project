@@ -22,7 +22,7 @@ function InputField(
 
   return (
     <div className=" space-y-1 mb-1 relative">
-      <label htmlFor="" className=" text-lg">
+      <label htmlFor={children} className=" text-lg">
         {children}
         {req && <span className=" text-red-400">*</span>}
       </label>

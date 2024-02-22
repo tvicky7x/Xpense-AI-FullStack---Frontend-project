@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { accountActions } from "../../Store/accountSlice";
 // import { addModalAction } from "../../../../../../FRONTEND/Best Websites/Xpense AI/src/Store/addModalSlice";
 
-function DropItem({ category, changeDefault }) {
+function DropItem({ category }) {
   // redux
   const dispatch = useDispatch();
   return (

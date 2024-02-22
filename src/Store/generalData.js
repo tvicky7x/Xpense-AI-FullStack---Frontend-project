@@ -38,3 +38,25 @@ export const allColors = [
   "#577590",
   "#277da1",
 ];
+
+export const categoriesIcon = [
+  "receipt_long",
+  "directions_car",
+  "styler",
+  "school",
+  "confirmation_number",
+  "restaurant",
+  "ecg_heart",
+  "house",
+  "health_and_safety",
+  "shopping_cart",
+  "account_balance",
+  "phone_iphone",
+  "commute",
+  "category",
+  "redeem",
+  "currency_exchange",
+  "real_estate_agent",
+  "add_card",
+  "sell",
+];

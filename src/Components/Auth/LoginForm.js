@@ -20,10 +20,12 @@ function LoginForm() {
   const confirmRef = useRef();
   const emailRef = useRef();
   const nameRef = useRef();
+  const formRef = useRef();
 
   // alternate Logging
   function alterLogging() {
     setLogging(!isLogging);
+    formRef.current.reset();
   }
 
   // checking passwords
@@ -72,40 +74,6 @@ function LoginForm() {
     e.target.reset();
   }
 
-  // async function authHandler(e) {
-  //   e.preventDefault();
-  //   const email = inputRef.current.value;
-  //   const password = passwordRef.current.value;
-  //   if (isLogging) {
-  //     try {
-  //       const response = await axios.post(
-  //         "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyALpXBSjeiujbqD3fRd705go3ToNOgfuyA",
-  //         { email: email, password: password, returnSecureToken: true }
-  //       );
-  //       dispatch(logInHandler(response.data.idToken, email));
-  //       e.target.reset();
-  //     } catch (error) {
-  //       alert("Authentication Error!");
-  //     }
-  //   } else {
-  //     const confirm = confirmRef.current.value;
-  //     if (password === confirm) {
-  //       try {
-  //         await axios.post(
-  //           "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyALpXBSjeiujbqD3fRd705go3ToNOgfuyA",
-  //           { email: email, password: password, returnSecureToken: false }
-  //         );
-  //         alternateMode();
-  //         e.target.reset();
-  //       } catch (error) {
-  //         alert("Sign Up Error!");
-  //       }
-  //     } else {
-  //       alert("Incorrect Confirm Password!");
-  //     }
-  //   }
-  // }
-
   return (
     <>
       <Card>
@@ -113,7 +81,7 @@ function LoginForm() {
           {isLogging ? "Log In" : "Sign Up"}
         </h2>
         <div className=" my-3 text-slate-800">
-          <form action="" onSubmit={submitHandler}>
+          <form action="" onSubmit={submitHandler} ref={formRef}>
             {!isLogging && (
               <InputField name={"name"} type={"text"} req={true} ref={nameRef}>
                 Name

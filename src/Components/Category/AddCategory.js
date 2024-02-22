@@ -11,20 +11,15 @@ import HeaderTitle from "../Containers/HeaderTitle";
 import { openPopupComponent } from "../../Store/generalAction";
 import axios from "axios";
 import { Login } from "../../Store/authAction";
+import CategoryIconContainer from "./CategoryIconContainer";
 
 function AddExpense() {
   // // Redux
   const dispatch = useDispatch();
-  const expenseCategories = useSelector(
-    (states) => states.account.expenseCategories
-  );
-  const incomeCategories = useSelector(
-    (states) => states.account.incomeCategories
-  );
+  const categoryNow = useSelector((states) => states.account.category);
 
   //ref
   const nameRef = useRef();
-  const iconRef = useRef();
 
   const [isIncome, setIsIncome] = useState(false);
 
@@ -61,7 +56,7 @@ function AddExpense() {
               Income
             </ToggleButton>
           </div>
-          <div className=" my-3 text-slate-800">
+          <div className=" mt-5 text-slate-800">
             <form action="">
               <div className="mb-1 mt-2">
                 {/* <DropDown
@@ -71,7 +66,7 @@ function AddExpense() {
               <InputField type={"text"} req={true} ref={nameRef} name={"name"}>
                 Name
               </InputField>
-
+              <CategoryIconContainer />
               <ButtonPrimary type="submit" className="mt-5 w-full">
                 Save Category
               </ButtonPrimary>
