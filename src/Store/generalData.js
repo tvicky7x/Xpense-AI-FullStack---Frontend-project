@@ -40,6 +40,7 @@ export const allColors = [
 ];
 
 export const categoriesIcon = [
+  "category",
   "receipt_long",
   "directions_car",
   "styler",
@@ -53,7 +54,6 @@ export const categoriesIcon = [
   "account_balance",
   "phone_iphone",
   "commute",
-  "category",
   "redeem",
   "currency_exchange",
   "real_estate_agent",

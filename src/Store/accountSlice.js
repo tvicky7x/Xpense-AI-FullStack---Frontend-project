@@ -7,6 +7,7 @@ const initialState = {
     name: "Categories",
     icon: "label",
   },
+  icon: "category",
   accountForm: {
     id: "",
     isIncome: false,
@@ -59,6 +60,9 @@ const accountSlice = createSlice({
     },
     changeCategory(states, action) {
       states.category = action.payload.category;
+    },
+    changeIcon(states, action) {
+      states.icon = action.payload.icon;
     },
     resetCategory(states) {
       states.category = {
